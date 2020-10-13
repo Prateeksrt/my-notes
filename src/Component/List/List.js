@@ -1,7 +1,7 @@
 import React from 'react';
-import './NoteList.css';
+import './List.css';
 
-const NoteList = ({noteList, onSelect}) => {
+const List = ({noteList, onSelect}) => {
     const NoteItems = noteList.map(item => (
             <NoteItem
                 title={item.title}
@@ -23,4 +23,4 @@ const NoteItem = ({title, onClick}) => (
     </div>
 );
 
-export default NoteList;
+export default List;

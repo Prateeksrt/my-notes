@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import './NoteEditor.css';
+import './Editor.css';
 
 
-const NoteEditor = ({note, onSave}) => {
+const Editor = ({note, onSave}) => {
     const [title, setTitle] = useState(note.title);
     const [body, setBody] = useState(note.body);
 
@@ -47,4 +47,4 @@ const NoteEditor = ({note, onSave}) => {
     );
 };
 
-export default NoteEditor;
+export default Editor;

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import NoteList from "./Component/NoteList/NoteList";
-import NoteEditor from "./Component/NoteEditor/NoteEditor";
+import List from "./Component/List/List";
+import Editor from "./Component/Editor/Editor";
 import './App.css';
 
 const initialNotes = [
@@ -36,10 +36,10 @@ const App = () => {
     return (
         <div className="Container">
             <div className="List" >
-                <NoteList noteList={notes} onSelect={handleNoteSelection}/>
+                <List noteList={notes} onSelect={handleNoteSelection}/>
             </div>
             <div className="Editor" >
-                <NoteEditor note={selectedNote} onSave={handleSave}/>
+                <Editor note={selectedNote} onSave={handleSave}/>
             </div>
         </div>
     );
