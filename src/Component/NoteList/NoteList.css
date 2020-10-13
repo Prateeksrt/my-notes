@@ -17,10 +17,9 @@
     padding-left: var(--horizontial-padding);
     padding-right: var(--horizontial-padding);
     padding-top: 5px;
-    border-style: solid;
-    border-color: var(--border-color);
-    border-width: 1px;
-    border-bottom-style: none;
+    border-bottom-style: solid;
+    border-bottom-color: var(--border-color);
+    border-bottom-width: 1px;
     font-size: large;
     color: var(--primary-text-color)
 }

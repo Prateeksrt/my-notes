@@ -1,11 +1,13 @@
 .Container{
     display: flex;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .Editor {
-    width: 90%
+    width: 80%
 }
 
 .List {
-    width: 10%;
+    width: 20%;
 }
