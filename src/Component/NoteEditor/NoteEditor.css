@@ -29,6 +29,7 @@
     resize: none;
     color: var(--primary-text-color);
     background-color: inherit;
+    cursor: default;
 }
 
 .TitleContainer {
