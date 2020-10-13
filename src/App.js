@@ -1,5 +1,7 @@
 import React from 'react';
 import NoteList from "./Component/NoteList/NoteList";
+import NoteEditor from "./Component/NoteEditor/NoteEditor";
+import './App.css';
 
 const Notes = [
     {title: "First Note", body: "", selected: true},
@@ -13,8 +15,13 @@ const Notes = [
 
 const App = () => {
     return (
-        <div>
-            <NoteList noteList={Notes}/>
+        <div className="Container">
+            <div className="List" >
+                <NoteList noteList={Notes}/>
+            </div>
+            <div className="Editor" >
+                <NoteEditor />
+            </div>
         </div>
     );
 };

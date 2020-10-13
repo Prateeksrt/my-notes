@@ -1,0 +1,11 @@
+.Container{
+    display: flex;
+}
+
+.Editor {
+    width: 90%
+}
+
+.List {
+    width: 10%;
+}
