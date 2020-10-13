@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './NoteEditor.css';
 
 
-const NoteEditor = ({note}) => {
+const NoteEditor = ({note, onSave}) => {
     const [title, setTitle] = useState(note.title);
     const [body, setBody] = useState(note.body);
 
@@ -15,6 +15,10 @@ const NoteEditor = ({note}) => {
     const handleBodyChange = (e) => {
         setBody(e.target.value);
     }
+    const handleSave = () => {
+        onSave(title, body);
+    }
+
     return (
         <div className="CreateNoteContainer">
             <div className="TitleContainer">
@@ -25,6 +29,9 @@ const NoteEditor = ({note}) => {
                     value={title}
                     onChange={handleTitleChange}
                 />
+                <button className="SaveButton" onClick={handleSave}>
+                    Save
+                </button>
             </div>
             <hr className="Separator"/>
             <div className="NoteAreaContainer">

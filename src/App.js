@@ -21,8 +21,16 @@ const App = () => {
         ? {...note, selected: true}
         : {...note, selected: false};
 
+    const updateNote = (id, title, body) => note => note.id === id
+    ? {...note, title, body }
+    : {...note}
+
     const handleNoteSelection = (selectedNoteId) => {
         setNotes(notes.map(toggleNoteSelection(selectedNoteId)));
+    }
+
+    const handleSave = (title, body) => {
+        setNotes(notes.map(updateNote(selectedNote.id, title, body)));
     }
 
     return (
@@ -31,7 +39,7 @@ const App = () => {
                 <NoteList noteList={notes} onSelect={handleNoteSelection}/>
             </div>
             <div className="Editor" >
-                <NoteEditor note={selectedNote}/>
+                <NoteEditor note={selectedNote} onSave={handleSave}/>
             </div>
         </div>
     );
