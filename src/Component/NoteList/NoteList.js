@@ -6,6 +6,7 @@ const NoteList = ({noteList, onSelect}) => {
             <NoteItem
                 title={item.title}
                 onClick={() => onSelect(item.id)}
+                key={item.id}
             />
         )
     );

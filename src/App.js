@@ -22,8 +22,9 @@ const App = () => {
         : {...note, selected: false};
 
     const handleNoteSelection = (selectedNoteId) => {
-        setNotes(initialNotes.map(toggleNoteSelection(selectedNoteId)));
+        setNotes(notes.map(toggleNoteSelection(selectedNoteId)));
     }
+
     return (
         <div className="Container">
             <div className="List" >
