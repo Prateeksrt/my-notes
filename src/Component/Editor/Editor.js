@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './Editor.css';
+import TitleEditor from "./TitleEditor/TitleEditor";
+import BodyEditor from "./BodyEditor/BodyEditor";
 
 
 const Editor = ({note, onSave}) => {
@@ -21,28 +23,13 @@ const Editor = ({note, onSave}) => {
 
     return (
         <div className="CreateNoteContainer">
-            <div className="TitleContainer">
-                <input
-                    className="Title"
-                    type="text"
-                    placeholder="Title"
-                    value={title}
-                    onChange={handleTitleChange}
-                />
-                <button className="SaveButton" onClick={handleSave}>
-                    Save
-                </button>
-            </div>
+            <TitleEditor
+                value={title}
+                handleChange={handleTitleChange}
+                onSave={handleSave}
+            />
             <hr className="Separator"/>
-            <div className="NoteAreaContainer">
-                <textarea
-                    value={body}
-                    rows="25"
-                    className="NoteArea"
-                    placeholder="Enter the notes here"
-                    onChange={handleBodyChange}
-                />
-            </div>
+            <BodyEditor value={body} onChange={handleBodyChange}/>
         </div>
     );
 };

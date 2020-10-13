@@ -1,0 +1,18 @@
+@import url(../../../Global/Colors.css);
+@import url(../../../Global/Spacing.css);
+
+.TitleContainer {
+    padding-top: 10px;
+    padding-left: var(--horizontial-padding);
+    width: 100%;
+    height: 50px;
+}
+
+.Title {
+    border-style: none;
+    width: 50%;
+    outline: none;
+    font-size: xx-large;
+    color: var(--primary-text-color);
+    background-color: inherit;
+}

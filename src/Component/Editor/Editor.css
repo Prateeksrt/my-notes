@@ -4,46 +4,10 @@
     --horizontial-padding: 10px;
 }
 
-.Title {
-    border-style: none;
-    width: 50%;
-    outline: none;
-    font-size: xx-large;
-    color: var(--primary-text-color);
-    background-color: inherit;
-}
-
 .Separator {
     width: 50%;
     float: left;
     margin-left: var(--horizontial-padding);
-}
-
-.NoteArea {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-style: none;
-    outline: none;
-    font-size: large;
-    resize: none;
-    color: var(--primary-text-color);
-    background-color: inherit;
-    cursor: default;
-}
-
-.TitleContainer {
-    padding-top: 10px;
-    padding-left: var(--horizontial-padding);
-    width: 100%;
-    height: 50px;
-}
-
-.NoteAreaContainer {
-    padding-top: 10px;
-    padding-left: var(--horizontial-padding);
-    width: 100%;
-    height: 100%;
 }
 
 .CreateNoteContainer {
