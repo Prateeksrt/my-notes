@@ -2,7 +2,7 @@ import React from 'react';
 import './NoteEditor.css';
 
 
-const NoteEditor = () => {
+const NoteEditor = ({note}) => {
     return (
         <div className="CreateNoteContainer">
             <div className="TitleContainer">
@@ -10,12 +10,13 @@ const NoteEditor = () => {
                     className="Title"
                     type="text"
                     placeholder="Title"
+                    value={note.title}
                 />
             </div>
             <hr className="Separator"/>
             <div className="NoteAreaContainer">
                 <textarea
-
+                    value={note.body}
                     rows="25"
                     className="NoteArea"
                     placeholder="Enter the notes here"

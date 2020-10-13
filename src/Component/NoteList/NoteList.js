@@ -1,13 +1,25 @@
 import React from 'react';
 import './NoteList.css';
 
-const NoteList = () => {
+const NoteList = ({noteList, onSelect}) => {
+    const NoteItems = noteList.map(item => (
+            <NoteItem
+                title={item.title}
+                onClick={() => onSelect(item.id)}
+            />
+        )
+    );
     return (
         <div className="NoteListContainer">
-            <div className="NoteItem">First Item</div>
-            <div className="NoteItem">Second Item</div>
+            { NoteItems }
         </div>
     );
 };
+
+const NoteItem = ({title, onClick}) => (
+    <div className="NoteItem" onClick={onClick}>
+        {title}
+    </div>
+);
 
 export default NoteList;
