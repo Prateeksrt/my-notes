@@ -1,8 +1,8 @@
 import React from 'react';
-import './CreateNote.css';
+import './NoteEditor.css';
 
 
-const CreateNote = () => {
+const NoteEditor = () => {
     return (
         <div className="CreateNoteContainer">
             <div className="TitleContainer">
@@ -25,4 +25,4 @@ const CreateNote = () => {
     );
 };
 
-export default CreateNote;
+export default NoteEditor;
