@@ -40,10 +40,24 @@ const App = () => {
         setNoteList(changedSelectedNote(noteList.concat(newNote))(newNote.id));
     }
 
+    const handleDelete = (id) => {
+        const indexOfItemToBeRemoved = noteList.findIndex(n => n.id === id);
+        if (indexOfItemToBeRemoved !== -1) {
+            const newNoteList = [...noteList];
+            newNoteList.splice(indexOfItemToBeRemoved, 1);
+            setNoteList(newNoteList)
+        }
+    }
+
     return (
         <div className="Container">
             <div className="SideMenu" >
-                <SideMenu noteList={noteList} onSelect={handleSelection} onCreate={handleCreation}/>
+                <SideMenu
+                    noteList={noteList}
+                    onSelect={handleSelection}
+                    onCreate={handleCreation}
+                    onDelete={handleDelete}
+                />
             </div>
             <div className="Editor" >
                 <Editor note={selectedNote} onSave={handleSave}/>

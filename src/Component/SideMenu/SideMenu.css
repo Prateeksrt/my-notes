@@ -28,6 +28,15 @@
     font-size: large;
     color: var(--primary-text-color);
     cursor: pointer;
+    display: flex;
+}
+
+.NoteTitle {
+    flex-grow: 1;
+}
+
+.DeleteButton:hover {
+    color: red;
 }
 
 .CreateItemContainer {
@@ -49,8 +58,8 @@
     background-color: Brown;
 }
 
-.NoteItem:hover, .Selected {
-    background-color: rebeccapurple;
+.NoteTitle:hover, .Selected {
+    font-weight: bolder;
 }
 
 .CreateNewItem:hover {

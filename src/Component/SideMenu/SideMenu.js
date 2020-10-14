@@ -1,13 +1,14 @@
 import React from 'react';
 import './SideMenu.css';
 
-const SideMenu = ({noteList, onSelect, onCreate}) => {
+const SideMenu = ({noteList, onSelect, onCreate, onDelete}) => {
     const NoteItems = noteList.map(item => (
             <NoteItem
                 title={`${item.id} ${item.title}`}
                 onClick={() => onSelect(item.id)}
                 key={item.id}
                 isSelected={item.selected}
+                onDelete={() => onDelete(item.id)}
             />
         )
     );
@@ -24,10 +25,11 @@ const SideMenu = ({noteList, onSelect, onCreate}) => {
     );
 };
 
-const NoteItem = ({title, onClick, isSelected}) => {
+const NoteItem = ({title, onClick, isSelected, onDelete}) => {
     const classNames = `NoteItem${isSelected ? " Selected" : ""}`
-    return <div className={classNames} onClick={onClick}>
-        {title}
+    return <div className={classNames} >
+        <div className="NoteTitle" onClick={onClick}>{title}</div>
+        <div className="DeleteButton" onClick={onDelete}>x</div>
     </div>
 };
 
