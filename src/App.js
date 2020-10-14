@@ -21,7 +21,7 @@ const App = () => {
         ? {...note, selected: true}
         : {...note, selected: false};
 
-    const updateNote = (id, title, body) => note => note.id === id
+    const updateTitleAndBody = (id, title, body) => note => note.id === id
     ? {...note, title, body }
     : {...note}
 
@@ -32,7 +32,7 @@ const App = () => {
     }
 
     const handleSave = (title, body) => {
-        setNoteList(noteList.map(updateNote(selectedNote.id, title, body)));
+        setNoteList(noteList.map(updateTitleAndBody(selectedNote.id, title, body)));
     }
 
     const handleCreation = () => {
@@ -43,9 +43,9 @@ const App = () => {
     const handleDelete = (id) => {
         const indexOfItemToBeRemoved = noteList.findIndex(n => n.id === id);
         if (indexOfItemToBeRemoved !== -1) {
-            const newNoteList = [...noteList];
-            newNoteList.splice(indexOfItemToBeRemoved, 1);
-            setNoteList(newNoteList)
+            const noteListClone = [...noteList];
+            noteListClone.splice(indexOfItemToBeRemoved, 1);
+            setNoteList(noteListClone)
         }
     }
 
