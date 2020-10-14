@@ -1,7 +1,7 @@
 import React from 'react';
-import './List.css';
+import './SideMenu.css';
 
-const List = ({noteList, onSelect, onCreate}) => {
+const SideMenu = ({noteList, onSelect, onCreate}) => {
     const NoteItems = noteList.map(item => (
             <NoteItem
                 title={`${item.id} ${item.title}`}
@@ -24,4 +24,4 @@ const NoteItem = ({title, onClick}) => (
     </div>
 );
 
-export default List;
+export default SideMenu;

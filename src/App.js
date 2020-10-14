@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import List from "./Component/List/List";
+import SideMenu from "./Component/SideMenu/SideMenu";
 import Editor from "./Component/Editor/Editor";
 import './App.css';
 
@@ -42,8 +42,8 @@ const App = () => {
 
     return (
         <div className="Container">
-            <div className="List" >
-                <List noteList={noteList} onSelect={handleSelection} onCreate={handleCreation}/>
+            <div className="SideMenu" >
+                <SideMenu noteList={noteList} onSelect={handleSelection} onCreate={handleCreation}/>
             </div>
             <div className="Editor" >
                 <Editor note={selectedNote} onSave={handleSave}/>
