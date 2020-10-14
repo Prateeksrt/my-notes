@@ -6,7 +6,6 @@ const BodyEditor = ({value, onChange}) => {
         <div className="NoteAreaContainer">
                 <textarea
                     value={value}
-                    rows="25"
                     className="NoteArea"
                     placeholder="Enter the notes here"
                     onChange={onChange}
