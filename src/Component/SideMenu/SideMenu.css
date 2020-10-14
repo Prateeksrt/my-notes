@@ -1,13 +1,18 @@
 @import url(../../Global/Spacing.css);
 @import url(../../Global/Colors.css);
 
-.NoteListContainer {
-    width: 100%;
+.SideMenuContainer {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     background-color: var(--primary-bg-color);
     border-right-style: solid;
     border-right-color: var(--border-color);
     border-right-width: 1px;
+}
+
+.NoteListContainer {
+    width: 100%;
 }
 
 .NoteItem {
@@ -25,6 +30,29 @@
     cursor: pointer;
 }
 
-.NoteItem:hover {
-    background-color: red;
+.CreateItemContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.EmptySpace {
+    flex: 1;
+}
+
+.CreateNewItem {
+    bottom: 0;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: var(--border-color);
+    border-bottom-style: none;
+    background-color: Brown;
+}
+
+.NoteItem:hover, .Selected {
+    background-color: rebeccapurple;
+}
+
+.CreateNewItem:hover {
+    background-color: green;
 }

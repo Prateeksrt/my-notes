@@ -7,19 +7,32 @@ const SideMenu = ({noteList, onSelect, onCreate}) => {
                 title={`${item.id} ${item.title}`}
                 onClick={() => onSelect(item.id)}
                 key={item.id}
+                isSelected={item.selected}
             />
         )
     );
     return (
-        <div className="NoteListContainer">
-            <NoteItem title="+  Create new Item" onClick={onCreate} />
-            { NoteItems }
+        <div className="SideMenuContainer">
+            <div className="NoteListContainer">
+                { NoteItems }
+            </div>
+            <div className="CreateItemContainer">
+                <div className="EmptySpace" />
+                <CreateNewItem title="+  Create new Item" onCreate={onCreate} />
+            </div>
         </div>
     );
 };
 
-const NoteItem = ({title, onClick}) => (
-    <div className="NoteItem" onClick={onClick}>
+const NoteItem = ({title, onClick, isSelected}) => {
+    const classNames = `NoteItem${isSelected ? " Selected" : ""}`
+    return <div className={classNames} onClick={onClick}>
+        {title}
+    </div>
+};
+
+const CreateNewItem = ({title, onCreate}) => (
+    <div className="CreateNewItem NoteItem" onClick={onCreate}>
         {title}
     </div>
 );
