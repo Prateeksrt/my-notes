@@ -4,7 +4,7 @@ import Editor from "./Component/Editor/Editor";
 import './App.css';
 
 const initialNotes = [
-    {id:1, title: "First Note", body: "Some text of the first note", selected: true},
+    {id:1, title: "First Note", body: "Some text of the first note", selected: false},
     {id:2, title: "Second Note", body: "Some random text in the second note", selected: false},
     {id:3, title: "Third Note", body: "", selected: false},
     {id:4, title: "Fourth Note", body: "", selected: false},
@@ -14,46 +14,36 @@ const initialNotes = [
 ];
 
 const App = () => {
-    const [noteList, setNoteList] = useState(initialNotes);
-    const selectedNote = noteList.find(n => n.selected);
+    const [notes, setNotes] = useState(initialNotes);
+    const selectedNote = notes.find(n => n.selected);
 
-    const selectNote = (id) => note => note.id === id
+    const findAndSelect = (id) => note => note.id === id
         ? {...note, selected: true}
         : {...note, selected: false};
 
-    const updateTitleAndBody = (id, title, body) => note => note.id === id
-    ? {...note, title, body }
-    : {...note}
+    const selectNew = () => findAndSelect(newId())
 
-    const changedSelectedNote = notes => id => notes.map(selectNote(id))
+    const findAndUpdate = (id, title, body) => note => note.id === id
+        ? {...note, title, body }
+        : {...note};
 
-    const handleSelection = (selectedNoteId) => {
-        setNoteList(changedSelectedNote(noteList)(selectedNoteId));
-    }
+    const newId = () => Math.max(...notes.map(n => parseInt(n.id))) + 1;
 
-    const handleSave = (title, body) => {
-        setNoteList(noteList.map(updateTitleAndBody(selectedNote.id, title, body)));
-    }
+    const handleSelection = (id) => setNotes(notes.map(findAndSelect(id)));
 
-    const handleCreation = () => {
-        const newNote = { id: noteList.length + 1, title: "New note", body: "", selected: false };
-        setNoteList(changedSelectedNote(noteList.concat(newNote))(newNote.id));
-    }
+    const handleSave = (title, body) => setNotes(notes.map(findAndUpdate(selectedNote.id, title, body)));
 
-    const handleDelete = (id) => {
-        const indexOfItemToBeRemoved = noteList.findIndex(n => n.id === id);
-        if (indexOfItemToBeRemoved !== -1) {
-            const noteListClone = [...noteList];
-            noteListClone.splice(indexOfItemToBeRemoved, 1);
-            setNoteList(noteListClone)
-        }
-    }
+    const createNewNote = () => ({ id: newId(), title: "New note", body: "", selected: false });
+
+    const handleCreation = () => setNotes(notes.concat(createNewNote()).map(selectNew()));
+
+    const handleDelete = (id) => setNotes(notes.filter(n => n.id !== id))
 
     return (
         <div className="Container">
             <div className="SideMenu" >
                 <SideMenu
-                    noteList={noteList}
+                    noteList={notes}
                     onSelect={handleSelection}
                     onCreate={handleCreation}
                     onDelete={handleDelete}
