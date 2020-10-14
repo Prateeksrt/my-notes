@@ -14,10 +14,10 @@ const initialNotes = [
 ];
 
 const App = () => {
-    const [notes, setNotes] = useState(initialNotes);
-    const selectedNote = notes.find(n => n.selected);
+    const [noteList, setNoteList] = useState(initialNotes);
+    const selectedNote = noteList.find(n => n.selected);
 
-    const toggleNoteSelection = (id) => note => note.id === id
+    const selectNote = (id) => note => note.id === id
         ? {...note, selected: true}
         : {...note, selected: false};
 
@@ -25,18 +25,25 @@ const App = () => {
     ? {...note, title, body }
     : {...note}
 
-    const handleNoteSelection = (selectedNoteId) => {
-        setNotes(notes.map(toggleNoteSelection(selectedNoteId)));
+    const changedSelectedNote = notes => id => notes.map(selectNote(id))
+
+    const handleSelection = (selectedNoteId) => {
+        setNoteList(changedSelectedNote(noteList)(selectedNoteId));
     }
 
     const handleSave = (title, body) => {
-        setNotes(notes.map(updateNote(selectedNote.id, title, body)));
+        setNoteList(noteList.map(updateNote(selectedNote.id, title, body)));
+    }
+
+    const handleCreation = () => {
+        const newNote = { id: noteList.length + 1, title: "New note", body: "", selected: false };
+        setNoteList(changedSelectedNote(noteList.concat(newNote))(newNote.id));
     }
 
     return (
         <div className="Container">
             <div className="List" >
-                <List noteList={notes} onSelect={handleNoteSelection}/>
+                <List noteList={noteList} onSelect={handleSelection} onCreate={handleCreation}/>
             </div>
             <div className="Editor" >
                 <Editor note={selectedNote} onSave={handleSave}/>
