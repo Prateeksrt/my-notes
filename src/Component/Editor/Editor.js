@@ -12,11 +12,15 @@ const Editor = ({note, onSave}) => {
         onSave(note.title, e.target.value);
     }
 
+    const NoteEditor = <>
+        <TitleEditor value={note?.title} handleChange={handleTitleChange}/>
+        <hr className="Separator"/>
+        <BodyEditor value={note?.body} onChange={handleBodyChange}/>
+    </>;
+
     return (
         <div className="CreateNoteContainer">
-            <TitleEditor value={note.title} handleChange={handleTitleChange}/>
-            <hr className="Separator"/>
-            <BodyEditor value={note.body} onChange={handleBodyChange}/>
+            { note ? NoteEditor : null }
         </div>
     );
 };
