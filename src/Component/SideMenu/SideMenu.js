@@ -26,9 +26,9 @@ const SideMenu = ({noteList, onSelect, onCreate, onDelete}) => {
 };
 
 const NoteItem = ({title, onClick, isSelected, onDelete}) => {
-    const classNames = `NoteItem${isSelected ? " Selected" : ""}`
-    return <div className={classNames} >
-        <div className="NoteTitle" onClick={onClick}>{title}</div>
+    const classNames = `NoteTitle${isSelected ? " Selected" : ""}`
+    return <div className="NoteItem" >
+        <div className={classNames} onClick={onClick}>{title}</div>
         <div className="DeleteButton" onClick={onDelete}>x</div>
     </div>
 };

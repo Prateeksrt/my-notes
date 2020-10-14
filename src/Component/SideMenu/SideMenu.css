@@ -60,6 +60,7 @@
 
 .NoteTitle:hover, .Selected {
     font-weight: bolder;
+    color: yellow;
 }
 
 .CreateNewItem:hover {
