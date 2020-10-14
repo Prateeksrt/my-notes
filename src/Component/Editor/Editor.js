@@ -1,35 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './Editor.css';
 import TitleEditor from "./TitleEditor/TitleEditor";
 import BodyEditor from "./BodyEditor/BodyEditor";
 
 
 const Editor = ({note, onSave}) => {
-    const [title, setTitle] = useState(note.title);
-    const [body, setBody] = useState(note.body);
-
-    useEffect(() => setTitle(note.title), [note.title]);
-    useEffect(() => setBody(note.body), [note.body]);
-
     const handleTitleChange = (e) => {
-        setTitle(e.target.value);
+        onSave(e.target.value, note.body);
     }
     const handleBodyChange = (e) => {
-        setBody(e.target.value);
-    }
-    const handleSave = () => {
-        onSave(title, body);
+        onSave(note.title, e.target.value);
     }
 
     return (
         <div className="CreateNoteContainer">
-            <TitleEditor
-                value={title}
-                handleChange={handleTitleChange}
-                onSave={handleSave}
-            />
+            <TitleEditor value={note.title} handleChange={handleTitleChange}/>
             <hr className="Separator"/>
-            <BodyEditor value={body} onChange={handleBodyChange}/>
+            <BodyEditor value={note.body} onChange={handleBodyChange}/>
         </div>
     );
 };

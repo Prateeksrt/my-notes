@@ -1,7 +1,7 @@
 import React from 'react';
 import './TitleEditor.css';
 
-const TitleEditor = ({value, handleChange, onSave}) => {
+const TitleEditor = ({value, handleChange}) => {
     return (
         <div className="TitleContainer">
             <input
@@ -11,9 +11,6 @@ const TitleEditor = ({value, handleChange, onSave}) => {
                 value={value}
                 onChange={handleChange}
             />
-            <button className="SaveButton" onClick={onSave}>
-                Save
-            </button>
         </div>
     );
 };
