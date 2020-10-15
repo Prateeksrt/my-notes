@@ -1,0 +1,30 @@
+@import url(../../Global/Spacing.css);
+@import url(../../Global/Colors.css);
+
+.CreateNewItem {
+    bottom: 0;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: var(--border-color);
+    border-bottom-style: none;
+    background-color: Brown;
+}
+
+.CreateNewItem:hover {
+    background-color: green;
+}
+
+.NoteItem {
+    width: 100%;
+    height: 40px;
+    padding-left: var(--horizontial-padding);
+    padding-right: var(--horizontial-padding);
+    padding-top: 8px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--border-color);
+    border-bottom-width: 1px;
+    font-size: large;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    display: flex;
+}

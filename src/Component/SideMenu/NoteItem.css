@@ -1,0 +1,31 @@
+@import url(../../Global/Spacing.css);
+@import url(../../Global/Colors.css);
+
+.NoteTitle {
+    flex-grow: 1;
+}
+
+.NoteTitle:hover, .Selected {
+    font-weight: bolder;
+    color: yellow;
+}
+
+.NoteItem {
+    width: 100%;
+    height: 40px;
+    background-color: inherit;
+    padding-left: var(--horizontial-padding);
+    padding-right: var(--horizontial-padding);
+    padding-top: 8px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--border-color);
+    border-bottom-width: 1px;
+    font-size: large;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    display: flex;
+}
+
+.DeleteButton:hover {
+    color: red;
+}

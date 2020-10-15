@@ -38,7 +38,10 @@ const App = () => {
                 />
             </div>
             <div className="Editor" >
-                <Editor note={selectedNote} onSave={handleUpdate}/>
+                <Editor
+                    note={selectedNote}
+                    onSave={handleUpdate}
+                />
             </div>
         </div>
     );
