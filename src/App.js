@@ -27,7 +27,7 @@ const App = () => {
         ? {...note, title, body }
         : {...note};
 
-    const newId = () => Math.max(...notes.map(n => parseInt(n.id))) + 1;
+    const newId = () => Math.max(...notes.map(n => parseInt(n.id)).concat(0)) + 1;
 
     const handleSelection = (id) => setNotes(notes.map(findAndSelect(id)));
 
@@ -41,7 +41,7 @@ const App = () => {
 
     return (
         <div className="Container">
-            <div className="SideMenu" >
+            <div className="SideMenu">
                 <SideMenu
                     noteList={notes}
                     onSelect={handleSelection}
