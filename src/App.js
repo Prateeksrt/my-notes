@@ -13,13 +13,13 @@ const App = () => {
 
     const selectNew = () => select(newId())
 
-    const findAndUpdate = (id, title, body) => note => ({ ...note, ...(note.id === id && {title, body})});
+    const update = (id, title, body) => note => ({ ...note, ...(note.id === id && {title, body})});
 
     const newId = () => nextId(notes);
 
     const handleSelection = id => setNotes(notes.map(select(id)));
 
-    const handleUpdate = (title, body) => setNotes(notes.map(findAndUpdate(selectedNote.id, title, body)));
+    const handleUpdate = (title, body) => setNotes(notes.map(update(selectedNote.id, title, body)));
 
     const createNewNote = () => ({ id: newId(), title: "New note", body: "", selected: false });
 
