@@ -1,3 +1,8 @@
 :root{
     --horizontial-padding: 10px;
+    --small-height: 40px;
+    --medium-height: 60px;
+    --large-height: 80px;
+    --X-large-height: 100px;
+    --XX-large-height: 120px;
 }

@@ -1,13 +1,13 @@
 import React from 'react';
-import NoteItem from "./NoteItem";
+import SideMenuItem from "./SideMenuItem";
 
 const NoteList = ({noteList, onSelect, onDelete}) => noteList.map(item =>
-            <NoteItem
-                title={`${item.id} ${item.title}`}
+            <SideMenuItem
+                text={`${item.id} ${item.title}`}
                 onClick={() => onSelect(item.id)}
                 key={item.id}
-                isHighlighted={item.selected}
-                onDelete={() => onDelete(item.id)}
+                highlighted={item.selected}
+                onClose={() => onDelete(item.id)}
             />)
 
 export default NoteList;

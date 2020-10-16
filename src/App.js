@@ -28,7 +28,7 @@ const App = () => {
     const handleDelete = id => setNotes(notes.filter(n => n.id !== id))
 
     return (
-        <div className="Container">
+        <div className="ItemContainer">
             <div className="SideMenu">
                 <SideMenu
                     noteList={notes}

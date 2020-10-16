@@ -10,7 +10,7 @@ const SideMenu = ({noteList, onSelect, onCreate, onDelete}) => (
         </div>
         <div className="CreateItemContainer">
             <div className="EmptySpace" />
-            <CreateNewItem title="+  Create new Item" onCreate={onCreate} />
+            <CreateNewItem title="Create new Item" onCreate={onCreate} />
         </div>
     </div>
 );

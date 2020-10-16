@@ -1,0 +1,37 @@
+@import url(../../Global/Spacing.css);
+@import url(../../Global/Colors.css);
+@import url(../../Global/Fonts.css);
+
+.Container {
+    display: flex;
+    height: var(--small-height);
+    color: var(--primary-text-color);
+    font-size: var(--large-font);
+    border-bottom-style: solid;
+    border-color: var(--border-color);
+    border-width: 1px;
+}
+
+.TextContainer {
+    margin: auto;
+    flex-grow: 1;
+    padding-left: var(--horizontial-padding);
+}
+
+.Text:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Close {
+    width: var(--small-height);
+    margin: auto;
+    text-align: center;
+    font-size: x-large;
+    color: red;
+    cursor: pointer;
+}
+
+.Close:hover {
+    font-weight: bolder;
+}
