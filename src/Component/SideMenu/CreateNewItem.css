@@ -1,7 +1,9 @@
 .CreateNewItemContainer {
-    display: flex;
     height: var(--small-height);
     background-color: var(--tint-primary-color);
+    text-align: center;
+    padding-top: var(--vertical-padding);
+    color: var(--text-primary-color);
 }
 
 .CreateNewItemContainer:hover {

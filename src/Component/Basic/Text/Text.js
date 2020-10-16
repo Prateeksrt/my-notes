@@ -9,7 +9,7 @@ const Text = ({text, type, charLimit = null}) => {
     );
 };
 
-const shouldTrim = (text, length) => length && text.length > length;
+const shouldTrim = (text, length) => text && length && text.length > length;
 
 const trim = (text, length) => `${text.substring(0, length)}.....`;
 
@@ -21,6 +21,7 @@ const typeToClass = {
     "body-1": "Body1",
     "body-2": "Body2",
     "caption": "Caption",
+    "button": "Button"
 }
 
 export default Text;

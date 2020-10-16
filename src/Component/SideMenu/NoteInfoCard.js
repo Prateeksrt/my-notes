@@ -37,7 +37,7 @@ const CloseButton = ({onClose, show}) => <>
 </>
 
 const NoteTitle = ({text, onClick}) => <div className="NoteInfoCardTitle" onClick={onClick} >
-    <Text text={text} type="subtitle-1" charLimit={20}/>
+    <Text text={text ? text : "New note"} type="subtitle-1" charLimit={20}/>
 </div>
 
 const LastModified = ({time}) => <Text

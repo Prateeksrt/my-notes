@@ -13,10 +13,10 @@ const App = () => {
 
     const selectNew = () => select(newId())
 
-    const withLastModified = (title, body) => ({lastModified: new Date(), title, body })
+    const withLastModified = (obj) => ({lastModified: new Date(), ...obj })
 
     const update = (id, title, body) => note => (
-        { ...note, ...(note.id === id && withLastModified(title, body))}
+        { ...note, ...(note.id === id && withLastModified({title, body}))}
     );
 
     const newId = () => nextId(notes);
@@ -25,7 +25,7 @@ const App = () => {
 
     const handleUpdate = (title, body) => setNotes(notes.map(update(selectedNote.id, title, body)));
 
-    const createNewNote = () => ({ id: newId(), title: "", body: "", selected: false });
+    const createNewNote = () => withLastModified(({ id: newId(), title: "", body: "", selected: false }));
 
     const handleCreation = () => setNotes(notes.concat(createNewNote()).map(selectNew()));
 

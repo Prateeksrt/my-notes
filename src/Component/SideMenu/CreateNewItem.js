@@ -1,9 +1,10 @@
 import React from 'react';
 import './CreateNewItem.css';
+import Text from "../Basic/Text/Text";
 
 const CreateNewItem = ({title, onCreate}) => (
     <div className="CreateNewItemContainer" onClick={onCreate}>
-        <span className="CreateNewItemText">{title}</span>
+        <Text text={title} type="button" />
     </div>
 );
 
