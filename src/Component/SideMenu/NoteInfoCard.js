@@ -3,6 +3,7 @@ import './NoteInfoCard.css';
 import Text from "../Basic/Text/Text";
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en';
+import { ReactComponent as SearchIcon} from "./search-icon.svg";
 
 TimeAgo.addDefaultLocale(en)
 
@@ -19,6 +20,7 @@ const NoteInfoCard = ({note, onClick, onClose}) => {
             onMouseLeave={handleMouseLeave}
         >
             <div className="NoteInfoCardHeader">
+                {note.hasResult && <SearchIcon className="NoteInfoCardSearchIcon"/>}
                 <NoteTitle text={note.title} onClick={() => onClick(note.id)}/>
                 <CloseButton onClose={() => onClose(note.id)} show={showClose || note.selected}/>
             </div>

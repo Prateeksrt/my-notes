@@ -10,7 +10,7 @@
 
 .SearchContainer {
     display: flex;
-    height: var(--medium-height);
+    min-height: var(--medium-height);
     width: 100%;
     justify-content: space-around;
     align-items: center;
