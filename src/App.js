@@ -21,7 +21,7 @@ const App = () => {
 
     const handleUpdate = (title, body) => setNotes(notes.map(update(selectedNote.id, title, body)));
 
-    const createNewNote = () => ({ id: newId(), title: "New note", body: "", selected: false });
+    const createNewNote = () => ({ id: newId(), title: "", body: "", selected: false });
 
     const handleCreation = () => setNotes(notes.concat(createNewNote()).map(selectNew()));
 
