@@ -17,7 +17,7 @@ const NoteInfoCard = ({note, onClick, onClose}) => {
                 <CloseButton onClose={() => onClose(note.id)} show={showClose}/>
             </div>
             <div className="NoteInfoCardContent" onClick={() => onClick(note.id)}>
-                <Text text={note.body} type="body-2" />
+                <Text text={note.body} type="body-2" charLimit={80}/>
             </div>
         </div>
     );

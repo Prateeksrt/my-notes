@@ -1,13 +1,15 @@
 import React from 'react';
 import './Text.css';
 
-const Text = ({text, type}) => {
+const Text = ({text, type, charLimit = null}) => {
     const classForType = typeToClass[type.toLowerCase()]
     const classNames = `Text ${classForType ?? "Body1"}`
     return (
-        <span className={classNames}>{text}</span>
+        <span className={classNames}>{trimText(text, charLimit)}</span>
     );
 };
+
+const trimText = (text, length) => length ? `${text.substring(0, length)}.....`: text;
 
 const typeToClass = {
     "subtitle-1": "SubTitle1",
