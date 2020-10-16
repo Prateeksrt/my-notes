@@ -9,6 +9,12 @@
     letter-spacing: 0.5px;
 }
 
+.Body2 {
+    font-weight: var(--font-weight-regular);
+    font-size: 14px;
+    letter-spacing: 0.25px;
+}
+
 .SubTitle1 {
     font-weight: var(--font-weight-regular);
     font-size: 16px;

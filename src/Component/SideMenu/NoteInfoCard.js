@@ -8,18 +8,27 @@ const NoteInfoCard = ({note, onClick, onClose}) => {
     const handleMouseLeave = () => setShowClose(false);
     return (
         <div
-            className={`SideMenuItemContainer`}
+            className="NoteInfoCardContainer"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <div className="SideMenuItemHeader">
-                <div className="SideMenuItemText" onClick={() => onClick(note.id)} >
-                    <Text text={note.title} type="subtitle-2"/>
-                </div>
-                {showClose && <div className="SideMenuItemClose" onClick={() => onClose(note.id)}>×</div>}
+            <div className="NoteInfoCardHeader">
+                <NoteTitle text={note.title} onClick={() => onClick(note.id)}/>
+                <CloseButton onClose={() => onClose(note.id)} show={showClose}/>
+            </div>
+            <div className="NoteInfoCardContent" onClick={() => onClick(note.id)}>
+                <Text text={note.body} type="body-2" />
             </div>
         </div>
     );
 };
+
+const CloseButton = ({onClose, show}) => <>
+    {show && <div className="NoteInfoCardClose" onClick={onClose}>×</div>}
+</>
+
+const NoteTitle = ({text, onClick}) => <div className="NoteInfoCardTitle" onClick={onClick} >
+    <Text text={text} type="subtitle-1"/>
+</div>
 
 export default NoteInfoCard;

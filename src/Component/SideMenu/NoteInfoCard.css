@@ -1,5 +1,6 @@
-.SideMenuItemContainer {
+.NoteInfoCardContainer {
     display: flex;
+    flex-direction: column;
     height: var(--x-large-height);
     color: var(--text-primary-color);
     border-bottom-style: solid;
@@ -7,20 +8,28 @@
     border-width: 1px;
 }
 
-.SideMenuItemHeader {
+.NoteInfoCardHeader {
     display:flex;
     width:100%;
     height: var(--x-small-height);
 }
 
-.SideMenuItemText {
+.NoteInfoCardContent {
+    width: 100%;
+    padding-left: var(--horizontial-padding);
+    color: var(--text-disabled-color);
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.NoteInfoCardTitle {
     flex-grow: 1;
     padding-left: var(--horizontial-padding);
     margin: auto;
     cursor: default;
 }
 
-.SideMenuItemClose {
+.NoteInfoCardClose {
     width: var(--small-height);
     margin: auto;
     text-align: center;
@@ -29,6 +38,6 @@
     cursor: pointer;
 }
 
-.SideMenuItemClose:hover {
+.NoteInfoCardClose:hover {
     font-weight: bolder;
 }
