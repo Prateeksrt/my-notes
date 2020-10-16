@@ -14,13 +14,13 @@ const NoteInfoCard = ({note, onClick, onClose}) => {
     const handleMouseLeave = () => setShowClose(false);
     return (
         <div
-            className="NoteInfoCardContainer"
+            className={`NoteInfoCardContainer ${note.selected ? "SelectedNote" : ""}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
             <div className="NoteInfoCardHeader">
                 <NoteTitle text={note.title} onClick={() => onClick(note.id)}/>
-                <CloseButton onClose={() => onClose(note.id)} show={showClose}/>
+                <CloseButton onClose={() => onClose(note.id)} show={showClose || note.selected}/>
             </div>
             <div className="NoteInfoCardContent" onClick={() => onClick(note.id)}>
                 <Text text={note.body} type="body-2" charLimit={80}/>

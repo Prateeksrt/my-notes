@@ -5,6 +5,7 @@
     border-bottom-style: solid;
     border-color: var(--border-primary-color);
     border-width: 1px;
+    padding-left: var(--padding-horizontal-regular);
 }
 
 .NoteInfoCardHeader {
@@ -15,23 +16,28 @@
 
 .NoteInfoCardContent {
     width: 100%;
-    padding-left: var(--horizontial-padding);
     color: var(--text-secondary-color);
     cursor: pointer;
     flex-grow: 1;
+}
+
+.SelectedNote {
+    border-left-width: 10px;
+    border-left-style: solid;
+    border-left-color: var(--tint-primary-color);
+    padding-left: var(--padding-horizontal-small);
 }
 
 .NoteInfoCardFooter {
     width: 100%;
     height: var(--xx-small-height);
     text-align: right;
-    padding-right: var(--horizontial-padding);
+    padding-right: var(--padding-horizontal-regular);
     color: var(--text-disabled-color);
 }
 
 .NoteInfoCardTitle {
     flex-grow: 1;
-    padding-left: var(--horizontial-padding);
     color: var(--text-primary-color);
     margin: auto;
     cursor: default;

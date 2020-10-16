@@ -3,7 +3,7 @@
 .Separator {
     width: 50%;
     float: left;
-    margin-left: var(--horizontial-padding);
+    margin-left: var(--padding-horizontal-regular);
 }
 
 .CreateNoteContainer {

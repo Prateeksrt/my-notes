@@ -1,5 +1,6 @@
 :root{
-    --horizontial-padding: 20px;
+    --padding-horizontal-regular: 20px;
+    --padding-horizontal-small: 10px;
     --vertical-padding: 10px;
     --x-small-height: 30px;
     --xx-small-height: 20px;

@@ -13,6 +13,6 @@
 
 .NoteAreaContainer {
     padding-top: 10px;
-    padding-left: var(--horizontial-padding);
+    padding-left: var(--padding-horizontal-regular);
     flex: 1;
 }
