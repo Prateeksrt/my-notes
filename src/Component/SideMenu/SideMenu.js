@@ -5,6 +5,9 @@ import CreateNewItem from "./CreateNewItem";
 
 const SideMenu = ({noteList, onSelect, onCreate, onDelete}) => (
     <div className="SideMenuContainer">
+        <div className="SearchContainer">
+            <input type="text" className="SearchBox Body2" />
+        </div>
         <div className="NoteListContainer">
             <NoteList noteList={noteList} onSelect={onSelect} onDelete={onDelete}/>
         </div>
