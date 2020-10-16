@@ -1,6 +1,6 @@
 .SideMenuItemContainer {
     display: flex;
-    height: var(--X-large-height);
+    height: var(--x-large-height);
     color: var(--text-primary-color);
     border-bottom-style: solid;
     border-color: var(--border-primary-color);
@@ -10,28 +10,17 @@
 .SideMenuItemHeader {
     display:flex;
     width:100%;
-    height: var(--small-height);
+    height: var(--x-small-height);
 }
 
-.TextContainer {
-    margin: auto;
+.SideMenuItemText {
     flex-grow: 1;
     padding-left: var(--horizontial-padding);
+    margin: auto;
+    cursor: default;
 }
 
-.Text {
-    cursor: pointer;
-}
-
-.Text:hover {
-    color: var(--text-disabled-color);
-}
-
-.Text:active {
-    color: var(--text-secondary-color);
-}
-
-.Close {
+.SideMenuItemClose {
     width: var(--small-height);
     margin: auto;
     text-align: center;
@@ -40,6 +29,6 @@
     cursor: pointer;
 }
 
-.Close:hover {
+.SideMenuItemClose:hover {
     font-weight: bolder;
 }

@@ -1,25 +1,25 @@
 import React, {useState} from 'react';
-import './SideMenuItem.css';
+import './NoteInfoCard.css';
 import Text from "../Basic/Text/Text";
 
-const SideMenuItem = ({text, highlighted, onClick, onClose}) => {
+const NoteInfoCard = ({note, onClick, onClose}) => {
     const [showClose, setShowClose] = useState(false);
     const handleMouseEnter = () => setShowClose(true);
     const handleMouseLeave = () => setShowClose(false);
     return (
         <div
-            className={`SideMenuItemContainer ${highlighted ? "Highlighted" : ""}`}
+            className={`SideMenuItemContainer`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
             <div className="SideMenuItemHeader">
-                <div className="TextContainer">
-                    <Text text={text} onClick={onClick} type="subtitle-2"/>
+                <div className="SideMenuItemText" onClick={() => onClick(note.id)} >
+                    <Text text={note.title} type="subtitle-2"/>
                 </div>
-                {showClose && <div className="Close" onClick={onClose}>×</div>}
+                {showClose && <div className="SideMenuItemClose" onClick={() => onClose(note.id)}>×</div>}
             </div>
         </div>
     );
 };
 
-export default SideMenuItem;
+export default NoteInfoCard;
