@@ -13,6 +13,6 @@
     width: 50%;
     outline: none;
     font-size: xx-large;
-    color: var(--primary-text-color);
+    color: inherit;
     background-color: inherit;
 }
