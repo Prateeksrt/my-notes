@@ -1,15 +1,16 @@
-@import url(../../Global/Spacing.css);
-@import url(../../Global/Colors.css);
-@import url(../../Global/Fonts.css);
-
-.Container {
+.SideMenuItemContainer {
     display: flex;
-    height: var(--small-height);
+    height: var(--X-large-height);
     color: var(--text-primary-color);
-    font-size: var(--large-font);
     border-bottom-style: solid;
     border-color: var(--border-primary-color);
     border-width: 1px;
+}
+
+.SideMenuItemHeader {
+    display:flex;
+    width:100%;
+    height: var(--small-height);
 }
 
 .TextContainer {

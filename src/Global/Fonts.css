@@ -1,3 +1,8 @@
 :root {
-    --large-font: large;
+    --subtitle-1: 16px;
+    --subtitle-2: 14px;
+
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
 }

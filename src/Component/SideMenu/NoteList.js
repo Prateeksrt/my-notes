@@ -3,7 +3,7 @@ import SideMenuItem from "./SideMenuItem";
 
 const NoteList = ({noteList, onSelect, onDelete}) => noteList.map(item =>
             <SideMenuItem
-                text={`${item.id} ${!!item.title ? item.title : "unknown"}`}
+                text={`${!!item.title ? item.title : "unknown"}`}
                 onClick={() => onSelect(item.id)}
                 key={item.id}
                 highlighted={item.selected}

@@ -1,3 +1,7 @@
+@import url(./Global/Colors.css);
+@import url(./Global/Spacing.css);
+@import url(./Global/Fonts.css);
+
 .ItemContainer{
     display: flex;
     border-style: solid;

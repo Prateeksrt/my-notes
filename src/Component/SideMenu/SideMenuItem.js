@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './SideMenuItem.css';
+import Text from "../Basic/Text/Text";
 
 const SideMenuItem = ({text, highlighted, onClick, onClose}) => {
     const [showClose, setShowClose] = useState(false);
@@ -7,14 +8,16 @@ const SideMenuItem = ({text, highlighted, onClick, onClose}) => {
     const handleMouseLeave = () => setShowClose(false);
     return (
         <div
-            className={`Container ${highlighted ? "Highlighted" : ""}`}
+            className={`SideMenuItemContainer ${highlighted ? "Highlighted" : ""}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <div className="TextContainer">
-                <span className="Text" onClick={onClick}>{text}</span>
+            <div className="SideMenuItemHeader">
+                <div className="TextContainer">
+                    <Text text={text} onClick={onClick} type="subtitle-2"/>
+                </div>
+                {showClose && <div className="Close" onClick={onClose}>×</div>}
             </div>
-            {showClose && <div className="Close" onClick={onClose}>×</div>}
         </div>
     );
 };
