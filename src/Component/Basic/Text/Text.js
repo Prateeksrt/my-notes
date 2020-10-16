@@ -20,6 +20,7 @@ const typeToClass = {
     "subtitle-2": "SubTitle2",
     "body-1": "Body1",
     "body-2": "Body2",
+    "caption": "Caption",
 }
 
 export default Text;

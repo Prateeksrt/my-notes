@@ -4,14 +4,14 @@
 }
 
 .Body1 {
-    font-weight: var(--font-weight-regular);
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: 15px;
     letter-spacing: 0.5px;
 }
 
 .Body2 {
     font-weight: var(--font-weight-regular);
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.25px;
 }
 
@@ -25,4 +25,10 @@
     font-weight: var(--font-weight-medium);
     font-size: 14px;
     letter-spacing: 0.1px;
+}
+
+.Caption {
+    font-weight: var(--font-weight-regular);
+    font-size: 11px;
+    letter-spacing: 0.4px;
 }

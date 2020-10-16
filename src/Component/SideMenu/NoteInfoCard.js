@@ -24,8 +24,9 @@ const NoteInfoCard = ({note, onClick, onClose}) => {
             </div>
             <div className="NoteInfoCardContent" onClick={() => onClick(note.id)}>
                 <Text text={note.body} type="body-2" charLimit={80}/>
-                <br/>
-                <Text text={timeAgo.format(note.lastModified,'twitter-minute-now')} type="caption"/>
+            </div>
+            <div className="NoteInfoCardFooter">
+                <LastModified time={note.lastModified}/>
             </div>
         </div>
     );
@@ -38,5 +39,10 @@ const CloseButton = ({onClose, show}) => <>
 const NoteTitle = ({text, onClick}) => <div className="NoteInfoCardTitle" onClick={onClick} >
     <Text text={text} type="subtitle-1" charLimit={20}/>
 </div>
+
+const LastModified = ({time}) => <Text
+    text={timeAgo.format(time,'twitter-minute-now')}
+    type="caption"
+/>
 
 export default NoteInfoCard;
