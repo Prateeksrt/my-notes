@@ -5,11 +5,15 @@ const Text = ({text, type, charLimit = null}) => {
     const classForType = typeToClass[type.toLowerCase()]
     const classNames = `Text ${classForType ?? "Body1"}`
     return (
-        <span className={classNames}>{trimText(text, charLimit)}</span>
+        <span className={classNames}>{format(text, charLimit)}</span>
     );
 };
 
-const trimText = (text, length) => length ? `${text.substring(0, length)}.....`: text;
+const shouldTrim = (text, length) => length && text.length > length;
+
+const trim = (text, length) => `${text.substring(0, length)}.....`;
+
+const format = (text, length) => shouldTrim(text,length) ? trim(text, length) : text;
 
 const typeToClass = {
     "subtitle-1": "SubTitle1",
