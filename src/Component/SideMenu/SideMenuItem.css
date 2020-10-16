@@ -5,10 +5,10 @@
 .Container {
     display: flex;
     height: var(--small-height);
-    color: var(--primary-text-color);
+    color: var(--text-primary-color);
     font-size: var(--large-font);
     border-bottom-style: solid;
-    border-color: var(--border-color);
+    border-color: var(--border-primary-color);
     border-width: 1px;
 }
 
@@ -18,9 +18,16 @@
     padding-left: var(--horizontial-padding);
 }
 
-.Text:hover {
-    font-weight: bold;
+.Text {
     cursor: pointer;
+}
+
+.Text:hover {
+    color: var(--text-disabled-color);
+}
+
+.Text:active {
+    color: var(--text-secondary-color);
 }
 
 .Close {

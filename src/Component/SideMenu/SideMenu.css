@@ -5,9 +5,9 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: var(--primary-bg-color);
+    background-color: var(--bg-primary-color);
     border-right-style: solid;
-    border-right-color: var(--border-color);
+    border-right-color: var(--border-primary-color);
     border-right-width: 1px;
 }
 

@@ -5,11 +5,15 @@
 .CreateNewItemContainer {
     display: flex;
     height: var(--small-height);
-    background-color: var(--secondary-bg-color);
+    background-color: var(--tint-primary-color);
 }
 
 .CreateNewItemContainer:hover {
-    background-color: var(--border-color);
+    background-color: var(--action-hover-color);
+}
+
+.CreateNewItemContainer:active {
+    background-color: var(--action-selected-color);
 }
 
 .CreateNewItemText {
@@ -17,4 +21,5 @@
     font-size: var(--large-font);
     font-weight: bolder;
     cursor: pointer;
+    color: var(--text-primary-color);
 }

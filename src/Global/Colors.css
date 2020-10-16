@@ -1,7 +1,17 @@
 :root {
-    --primary-text-color: White;
-    --primary-placeholder: lightGrey;
-    --border-color: White;
-    --primary-bg-color: Black;
-    --secondary-bg-color: Grey
+    --text-primary-color: #fff;
+    --text-secondary-color: rgba(255, 255, 255, 0.7);
+    --text-disabled-color: rgba(255, 255, 255, 0.5);
+
+    --bg-primary-color: #303030;
+    --bg-secondary-color: Grey;
+
+    --border-primary-color: rgba(255, 255, 255, 0.12);
+    --border-secondary-color: lightgrey;
+
+    --action-primary-color: #424242;
+    --action-hover-color: rgba(255, 255, 255, 0.08);
+    --action-selected-color: rgba(255, 255, 255, 0.16);
+
+    --tint-primary-color: #0D47A1;
 }
