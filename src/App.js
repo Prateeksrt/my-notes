@@ -13,7 +13,11 @@ const App = () => {
 
     const selectNew = () => select(newId())
 
-    const update = (id, title, body) => note => ({ ...note, ...(note.id === id && {title, body})});
+    const withLastModified = (title, body) => ({lastModified: new Date(), title, body })
+
+    const update = (id, title, body) => note => (
+        { ...note, ...(note.id === id && withLastModified(title, body))}
+    );
 
     const newId = () => nextId(notes);
 
