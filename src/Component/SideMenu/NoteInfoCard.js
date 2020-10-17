@@ -9,20 +9,20 @@ TimeAgo.addDefaultLocale(en)
 
 const timeAgo = new TimeAgo('en-US')
 
-const NoteInfoCard = ({note, onClick, onClose}) => {
+const NoteInfoCard = ({note, onClick, onClose, selected}) => {
     const [showClose, setShowClose] = useState(false);
     const handleMouseEnter = () => setShowClose(true);
     const handleMouseLeave = () => setShowClose(false);
     return (
         <div
-            className={`NoteInfoCardContainer ${note.selected ? "SelectedNote" : ""}`}
+            className={`NoteInfoCardContainer ${selected ? "SelectedNote" : ""}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
             <div className="NoteInfoCardHeader">
                 {note.hasResult && <SearchIcon className="NoteInfoCardSearchIcon"/>}
                 <NoteTitle text={note.title} onClick={() => onClick(note.id)}/>
-                <CloseButton onClose={() => onClose(note.id)} show={showClose || note.selected}/>
+                <CloseButton onClose={() => onClose(note.id)} show={showClose || selected}/>
             </div>
             <div className="NoteInfoCardContent" onClick={() => onClick(note.id)}>
                 <Text text={note.body} type="body-2" charLimit={80}/>

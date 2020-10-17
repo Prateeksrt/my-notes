@@ -4,7 +4,7 @@ import NoteList from "./NoteList";
 import CreateNewItem from "./CreateNewItem";
 import SearchBox from "../SearchBox/SearchBox";
 
-const SideMenu = ({noteList, onSelect, onCreate, onDelete}) => {
+const SideMenu = ({noteList, onSelect, onCreate, onDelete, selected}) => {
     const [notesWithSearch, setNoteWithSearch] = useState(noteList);
     useEffect(() => setNoteWithSearch(noteList), [noteList]);
     const containsQuery = query => note => note.body.indexOf(query) !== -1;
@@ -22,6 +22,7 @@ const SideMenu = ({noteList, onSelect, onCreate, onDelete}) => {
                     onSelect={onSelect}
                     onDelete={onDelete}
                     noteList={notesWithSearch}
+                    selected={selected}
                 />
             </div>
             <div className="CreateItemContainer">

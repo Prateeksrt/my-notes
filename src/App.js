@@ -7,11 +7,8 @@ import {initialNotes} from "./Mocks/MockNotes";
 
 const App = () => {
     const [notes, setNotes] = useState(initialNotes);
-    const selectedNote = notes.find(n => n.selected);
-
-    const select = id => note => ({...note, selected: note.id === id});
-
-    const selectNew = () => select(newId())
+    const [selected, setSelected] = useState();
+    const selectedNote = notes.find(n => n.id === selected);
 
     const withLastModified = (obj) => ({lastModified: new Date(), ...obj })
 
@@ -21,13 +18,16 @@ const App = () => {
 
     const newId = () => nextId(notes);
 
-    const handleSelection = id => setNotes(notes.map(select(id)));
+    const handleSelection = id => setSelected(id);
 
     const handleUpdate = (title, body) => setNotes(notes.map(update(selectedNote.id, title, body)));
 
-    const createNewNote = () => withLastModified(({ id: newId(), title: "", body: "", selected: false }));
+    const createNewNote = () => withLastModified(({ id: newId(), title: "", body: ""}));
 
-    const handleCreation = () => setNotes(notes.concat(createNewNote()).map(selectNew()));
+    const handleCreation = () => {
+        setNotes(notes.concat(createNewNote()));
+        setSelected(newId());
+    }
 
     const handleDelete = id => setNotes(notes.filter(n => n.id !== id))
 
@@ -36,6 +36,7 @@ const App = () => {
             <div className="SideMenu">
                 <SideMenu
                     noteList={notes}
+                    selected={selected}
                     onSelect={handleSelection}
                     onCreate={handleCreation}
                     onDelete={handleDelete}
