@@ -3,7 +3,11 @@ import './SearchBox.css';
 
 const SearchBox = ({onSearch, onClear}) => {
     const [query, setQuery] = useState("");
-    const handleQueryChange = (e) => setQuery(e.target.value);
+    const handleQueryChange = (e) => {
+        const value = e.target.value;
+        setQuery(value);
+        !value && onClear();
+    }
     const handleKeyDown = (event) => event.key === 'Enter' &&  (query.length > 0 ? onSearch(query) : onClear());
 
     return (

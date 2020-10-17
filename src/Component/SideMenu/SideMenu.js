@@ -1,17 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './SideMenu.css';
 import NoteList from "./NoteList";
 import CreateNewItem from "./CreateNewItem";
 import SearchBox from "../SearchBox/SearchBox";
 
 const SideMenu = ({noteList, onSelect, onCreate, onDelete, selected}) => {
-    const [notesWithSearch, setNoteWithSearch] = useState(noteList);
-    useEffect(() => setNoteWithSearch(noteList), [noteList]);
+    const [searchResult, setSearchResult] = useState({isSearch: false});
     const containsQuery = query => note => note.body.indexOf(query) !== -1;
-    const setHasResult = query => note => ({...note, hasResult: containsQuery(query)(note)});
-    const clearResult = note => ({...note, hasResult: false});
-    const handleSearch = query => setNoteWithSearch(notesWithSearch.map(setHasResult(query)));
-    const handleSearchClear = () => setNoteWithSearch(notesWithSearch.map(clearResult));
+    const searchResultNote = query => noteList.filter(containsQuery(query)).map(note => note.id)
+    const handleSearch = query => setSearchResult({noteIds: searchResultNote(query), query: query, isSearch: true});
+    const handleSearchClear = () => setSearchResult({isSearch: false});
     return (
         <div className="SideMenuContainer">
             <div className="SearchContainer">
@@ -21,8 +19,9 @@ const SideMenu = ({noteList, onSelect, onCreate, onDelete, selected}) => {
                 <NoteList
                     onSelect={onSelect}
                     onDelete={onDelete}
-                    noteList={notesWithSearch}
+                    noteList={noteList}
                     selected={selected}
+                    searchResult={searchResult}
                 />
             </div>
             <div className="CreateItemContainer">
