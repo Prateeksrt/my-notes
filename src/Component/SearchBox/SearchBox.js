@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './SearchBox.css';
 
-const SearchBox = ({onSearch}) => {
+const SearchBox = ({onSearch, onClear}) => {
     const [query, setQuery] = useState("");
     const handleQueryChange = (e) => setQuery(e.target.value);
-    const handleKeyDown = (event) => event.key === 'Enter' && onSearch(query);
+    const handleKeyDown = (event) => event.key === 'Enter' &&  (query.length > 0 ? onSearch(query) : onClear());
 
     return (
         <input

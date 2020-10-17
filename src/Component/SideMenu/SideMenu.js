@@ -7,13 +7,15 @@ import SearchBox from "../SearchBox/SearchBox";
 const SideMenu = ({noteList, onSelect, onCreate, onDelete}) => {
     const [notesWithSearch, setNoteWithSearch] = useState(noteList);
     useEffect(() => setNoteWithSearch(noteList), [noteList]);
-    const handleSearch = (query) => {
-        setNoteWithSearch(notesWithSearch.map(note => ({...note, hasResult: note.body.indexOf(query) !== -1})));
-    }
+    const containsQuery = query => note => note.body.indexOf(query) !== -1;
+    const setHasResult = query => note => ({...note, hasResult: containsQuery(query)(note)});
+    const clearResult = note => ({...note, hasResult: false});
+    const handleSearch = query => setNoteWithSearch(notesWithSearch.map(setHasResult(query)));
+    const handleSearchClear = () => setNoteWithSearch(notesWithSearch.map(clearResult));
     return (
         <div className="SideMenuContainer">
             <div className="SearchContainer">
-            <SearchBox onSearch={handleSearch} />
+            <SearchBox onSearch={handleSearch} onClear={handleSearchClear}/>
             </div>
             <div className="NoteListContainer">
                 <NoteList
