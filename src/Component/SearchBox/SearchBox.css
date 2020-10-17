@@ -1,0 +1,13 @@
+
+.SearchBox {
+    height: 30px;
+    border-radius: 5px;
+    width: 80%;
+    background-color: var(--bg-secondary-color);
+    border-color: var(--border-primary-color);
+    outline: none;
+    caret-color: var(--text-secondary-color);
+    color: var(--text-secondary-color);
+    padding-left: var(--padding-horizontal-small);
+    padding-right: var(--padding-horizontal-small);
+}

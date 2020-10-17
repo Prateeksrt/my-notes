@@ -9,7 +9,7 @@
 .CreateNoteContainer {
     height: 100%;
     width: 100%;
-    background-color: var(--bg-primary-color);
+    background-color: var(--bg-secondary-color);
     display: flex;
     flex-direction: column;
     color: var(--text-primary-color);

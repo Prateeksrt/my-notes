@@ -11,7 +11,7 @@
 .NoteInfoCardHeader {
     display:flex;
     width:100%;
-    height: var(--x-small-height);
+    height: var(--height-x-small);
 }
 
 .NoteInfoCardContent {
@@ -30,7 +30,7 @@
 
 .NoteInfoCardFooter {
     width: 100%;
-    height: var(--xx-small-height);
+    height: var(--height-xx-small);
     text-align: right;
     padding-right: var(--padding-horizontal-regular);
     color: var(--text-disabled-color);
@@ -52,7 +52,7 @@
 }
 
 .NoteInfoCardClose {
-    width: var(--small-height);
+    width: var(--height-small);
     margin: auto;
     text-align: center;
     font-size: x-large;

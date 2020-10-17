@@ -1,9 +1,10 @@
 .CreateNewItemContainer {
-    height: var(--small-height);
+    height: var(--height-small);
     background-color: var(--tint-primary-color);
     text-align: center;
     padding-top: var(--vertical-padding);
     color: var(--text-primary-color);
+    cursor: pointer;
 }
 
 .CreateNewItemContainer:hover {

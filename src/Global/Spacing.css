@@ -2,9 +2,10 @@
     --padding-horizontal-regular: 20px;
     --padding-horizontal-small: 10px;
     --vertical-padding: 10px;
-    --x-small-height: 30px;
-    --xx-small-height: 20px;
-    --small-height: 40px;
+
+    --height-x-small: 30px;
+    --height-xx-small: 20px;
+    --height-small: 40px;
     --medium-height: 60px;
     --large-height: 80px;
     --x-large-height: 100px;
