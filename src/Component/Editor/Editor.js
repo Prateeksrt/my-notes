@@ -4,7 +4,7 @@ import TitleEditor from "./TitleEditor/TitleEditor";
 import BodyEditor from "./BodyEditor/BodyEditor";
 
 
-const Editor = ({note, onSave}) => {
+const Editor = ({note, onSave, onEditableChange, editable, searchResult}) => {
     const handleTitleChange = (e) => {
         onSave(e.target.value, note.body);
     }
@@ -15,7 +15,13 @@ const Editor = ({note, onSave}) => {
     const NoteEditor = <>
         <TitleEditor value={note?.title} handleChange={handleTitleChange}/>
         <hr className="Separator"/>
-        <BodyEditor value={note?.body} onChange={handleBodyChange}/>
+        <BodyEditor
+            value={note?.body}
+            onChange={handleBodyChange}
+            editable={editable}
+            onEditableChange={onEditableChange}
+            searchResult={searchResult}
+        />
     </>;
 
     return (

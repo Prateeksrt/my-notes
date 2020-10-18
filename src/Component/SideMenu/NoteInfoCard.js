@@ -26,7 +26,7 @@ const NoteInfoCard = ({note, onClick, onClose, selected, searchResult}) => {
                 <CloseButton onClose={() => onClose(note.id)} show={showClose || selected}/>
             </div>
             <div className="NoteInfoCardContent" onClick={() => onClick(note.id)}>
-                <Text text={note.body} type="body-2" charLimit={80}/>
+                <Text text={note.body} type="body-2" charLimit={80} highlight={searchResult.query}/>
             </div>
             <div className="NoteInfoCardFooter">
                 <LastModified time={note.lastModified}/>

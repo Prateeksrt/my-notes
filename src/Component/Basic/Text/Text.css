@@ -4,7 +4,7 @@
 }
 
 .Body1 {
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-light);
     font-size: 15px;
     letter-spacing: 0.5px;
 }
@@ -38,4 +38,8 @@
     font-size: 14px;
     letter-spacing: 1.25px;
     text-transform: uppercase;
+}
+
+.HighLightedText {
+    color: var(--tint-tertiary-color);
 }

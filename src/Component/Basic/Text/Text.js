@@ -1,19 +1,40 @@
 import React from 'react';
 import './Text.css';
 
-const Text = ({text, type, charLimit = null}) => {
+const Text = ({text, type, highlight, charLimit = null}) => {
     const classForType = typeToClass[type.toLowerCase()]
     const classNames = `Text ${classForType ?? "Body1"}`
-    return (
-        <span className={classNames}>{format(text, charLimit)}</span>
-    );
+    return formatText(text,charLimit, highlight, classNames);
 };
 
-const shouldTrim = (text, length) => text && length && text.length > length;
+const shouldHighLight = (text, highlight) => text && text.length > 0 && highlight;
 
-const trim = (text, length) => `${text.substring(0, length)}.....`;
+const rePositionForHighLight = (text, highLight, charLimit) => {
+    if (!shouldHighLight(text,highLight)) return text;
+    const indexOf = text.indexOf(highLight);
+    if(charLimit && indexOf + highLight.length > charLimit) {
+        return `....${text.substring(indexOf - charLimit * .5)}`;
+    }
+    return text;
+}
 
-const format = (text, length) => shouldTrim(text,length) ? trim(text, length) : text;
+const shouldTrim = (text, charLimit) => text && charLimit && text.length > charLimit;
+
+const trim = (text, charLimit) => `${text.substring(0, charLimit)}.....`;
+
+const trimText = (text, charLimit) => shouldTrim(text,charLimit) ? trim(text, charLimit) : text;
+
+const formatText = (text, charLimit, highLight, classNames) => {
+    const rePositionedText = rePositionForHighLight(text,highLight,charLimit);
+    const trimmedText = trimText(rePositionedText, charLimit);
+    const tokens = trimmedText.split(highLight);
+    return tokens.flatMap((token, index) => {
+        const result = [<span className={classNames}>{token}</span>];
+        return index < tokens.length - 1
+            ? result.concat(<span className={`${classNames} HighLightedText`}>{highLight}</span> )
+            : result;
+    })
+}
 
 const typeToClass = {
     "subtitle-1": "SubTitle1",
