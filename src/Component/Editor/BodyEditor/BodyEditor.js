@@ -1,6 +1,6 @@
 import React from 'react';
 import './BodyEditor.css';
-import Text from "../../Basic/Text/Text";
+import ReactMarkdown from 'react-markdown'
 
 const BodyEditor = ({value, onChange, onEditableChange, editable, searchResult}) => {
     const handleEditorClick = () => !editable && onEditableChange(true);
@@ -22,10 +22,7 @@ const BodyEditor = ({value, onChange, onEditableChange, editable, searchResult})
                         onChange={onChange}
                         onBlur={handleEditorFocusLose}
                     />
-                :
-                    <div style={{height: '99%', borderStyle: 'none'}}>
-                        <Text text={value} highlight={searchResult.query} type="body-1"/>
-                    </div>
+                : <ReactMarkdown className="Markdown">{value}</ReactMarkdown>
             }
 
         </div>

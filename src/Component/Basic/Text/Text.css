@@ -1,9 +1,9 @@
 
-.Text {
+.Text, .Markdown {
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-.Body1 {
+.Body1, .Markdown p {
     font-weight: var(--font-weight-light);
     font-size: 15px;
     letter-spacing: 0.5px;
@@ -40,6 +40,6 @@
     text-transform: uppercase;
 }
 
-.HighLightedText {
+.HighLightedText, .Markdown a {
     color: var(--tint-tertiary-color);
 }
